@@ -1,0 +1,20 @@
+.filter-side {
+    min-width: 25rem;
+    transform: translateX(-100%);
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0;
+    z-index: 10;
+    background-color: var(--content-color);
+    padding: 1rem;
+}
+
+@media (min-width: 992px){
+    .filter-side {
+        min-width: 25rem;
+        position: sticky;
+        inset-block-start: 7rem;
+        min-height: 50rem;
+        transform: translateX(0);
+    }
+}

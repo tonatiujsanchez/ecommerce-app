@@ -1,0 +1,30 @@
+[
+    {
+        "id": 2,
+        "title": "¡Encuentra tu smartphone ideal!",
+        "banner": "/images/banner_02.webp",
+        "description": "Descubre una amplia gama de smartphones con las últimas características y tecnologías.",
+        "category": "Smartphones"
+    },
+    {
+        "id": 3,
+        "title": "¡Transforma tu sala con nuestras Smart TVs!",
+        "banner": "/images/banner_04.webp",
+        "description": "Disfruta de una experiencia de visualización excepcional con nuestras Smart TVs de alta calidad.",
+        "category": "Smart TV"
+    },
+    {
+        "id": 4,
+        "title": "¡Potencia tu trabajo con una MacBook!",
+        "banner": "/images/banner_07.webp",
+        "description": "Descubre la potencia y la portabilidad de una MacBook para llevar tu productividad al siguiente nivel.",
+        "category": "Computers"
+    },
+    {
+        "id": 5,
+        "title": "¡Equipa tu cocina con nuestras mejores estufas!",
+        "banner": "/images/banner_06.webp",
+        "description": "Encuentra la estufa perfecta para tu cocina entre nuestra selección de modelos de alta calidad.",
+        "category": "Kitchen"
+    }
+]

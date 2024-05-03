@@ -1,0 +1,8 @@
+
+.main__content {
+    margin-block-start: 5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    padding-block-end: 10rem;
+}
