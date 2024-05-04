@@ -55,3 +55,30 @@ export const BoxIcon = () => {
         </svg>
     )
 }
+
+export const FilterIcon = () => {
+    return (
+        <svg 
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="25" height="25" 
+            fill="currentColor" stroke="none" 
+        >
+            <path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z"></path>
+        </svg>
+    )
+}
+
+export const ArrowRightIcon = () => {
+    return (
+        <svg 
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="25" height="25" 
+            fill="currentColor" stroke="none" 
+        >
+            <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path>
+        </svg>
+    )
+}
+

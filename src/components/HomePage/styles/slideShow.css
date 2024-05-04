@@ -26,6 +26,7 @@
     line-height: 2.1rem;
     color: var(--text-color);
     text-shadow: var(--text-shadow-primary);
+    max-width: 50rem;
 }
 
 /* Swiper Buttons */
@@ -40,7 +41,7 @@
 
 @media (min-width: 768px){
     .slide {
-        height: 50rem;
+        height: 45rem;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -61,7 +62,7 @@
 @media (min-width: 944px) {
     
     .slide__title {
-        font-size: 4.5rem;
+        font-size: 4.8rem;
     }
 
     .slide__description {

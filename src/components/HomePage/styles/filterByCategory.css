@@ -1,0 +1,22 @@
+.filter-category {
+    margin-block-start: 3rem;
+}
+
+.filter-category__list {
+    margin-block-start: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.filter-category__button {
+    padding: 0.5rem 1.4rem;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--text-light-color);
+}
+
+.filter-category__button:hover {
+    background: var(--body-color);
+    color: var(--text-color);
+}
