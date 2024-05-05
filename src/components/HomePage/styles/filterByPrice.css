@@ -19,10 +19,11 @@
 .filter-price__item button {
     color: var(--text-light-color);
     padding-inline: 0;
+    transition: 0.3s;
 }
 
 .filter-price__item button:hover {
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .filter-price__item--form {

@@ -1,5 +1,6 @@
 .filter-side {
     min-width: 25rem;
+    max-width: 25rem;
     transform: translateX(-100%);
     position: fixed;
     inset-block: 0;
@@ -19,6 +20,7 @@
 @media (min-width: 992px){
     .filter-side {
         min-width: 25rem;
+        max-width: 25rem;
         position: sticky;
         inset-block-start: 7rem;
         min-height: 50rem;

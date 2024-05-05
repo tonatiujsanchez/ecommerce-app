@@ -1,0 +1,32 @@
+.filter-list {
+    margin-block-start: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.3rem;
+    background: var(--body-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.filter-item button {
+    padding-inline: 0.2rem;
+    font-size: 1.6rem;
+    color: var(--text-light-color);
+}
+
+.filter-item button svg{
+    width: 1.5rem;
+    height: 1.4rem;
+    aspect-ratio: 1;
+}
+
+.filter-item button:hover {
+    color: var(--text-color);
+}

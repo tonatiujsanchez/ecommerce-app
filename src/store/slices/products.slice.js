@@ -1,25 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 export const productsSlice = createSlice({
-   name: 'products',
-   initialState: {
-       products: [],
-       isLoading: false,
-       hasError : null
-   },
-   reducers: {
-       setProducts: (state, action ) => {
-           state.products = action.payload
-       },
-       setIsLoading: (state, action) => {
-           state.isLoading = action.payload
-       },
-       setHasError: (state, action) => {
-           state.hasError = action.payload
-       }
+    name: 'products',
+    initialState: {
+        products: [],
+        isLoadingProducts: true,
+        hasErrorProducts: null
+    },
+    reducers: {
+        setProducts: (state, action) => {
+            state.products  = action.payload
+            state.isLoadingProducts = false
+            state.hasErrorProducts  = null
+        },
+        setIsLoadingProducts: (state, action) => {
+            state.isLoadingProducts = action.payload
+        },
+        setHasErrorProducts: (state, action) => {
+            state.hasErrorProducts = action.payload
+        }
     }
-});
+})
 
 
 
-export const { setProducts, setIsLoading, setHasError } = productsSlice.actions;
+export const { setProducts, setIsLoadingProducts, setHasErrorProducts } = productsSlice.actions

@@ -1,6 +1,6 @@
 .product-card {
-    /* padding: 1.5rem 2rem; */
     position: relative;
+    /* max-width: 32rem; */
 }
 
 .product-card__figure {
@@ -13,8 +13,9 @@
 }
 
 .product-card__img {
+    width: 100%;
+    margin-inline:auto;
     object-fit: contain;
-    height: 100%;
     transition: all 0.3s;
 }
 
