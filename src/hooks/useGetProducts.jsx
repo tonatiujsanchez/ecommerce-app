@@ -30,10 +30,6 @@ export const useGetProducts = () => {
     }, [allProducts, selectedCategory, selectedPrice])
 
 
-
-    console.log(selectedCategory)
-    
-
     const getAllProdcuts = () => {
         dispatch( getProducts() )
     }
