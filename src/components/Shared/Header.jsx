@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import { BoxIcon, HeartIcon, ShoppingCartIcon, UserCircleIcon } from '../Icons'
 import './styles/header.css'
 
 export const Header = () => {
+
+    const { user } = useSelector(state => state.auth)
+    
     return (
         <header className="header">
             <div className="header__container container">
@@ -19,7 +23,16 @@ export const Header = () => {
                             <Link to="/purchases" className="nav__link"><BoxIcon /></Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="/login" className="nav__link"><UserCircleIcon /></Link>
+                            {
+                                user 
+                                ?(
+                                    <Link to="/user" className="nav__link nav__link--user">
+                                            <span>{ user.firstName.slice(0,1) }</span>
+                                    </Link>
+                                ):(
+                                    <Link to="/login" className="nav__link"><UserCircleIcon /></Link>
+                                )
+                            }
                         </li>
                     </ul>
                 </nav>

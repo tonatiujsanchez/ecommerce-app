@@ -4,3 +4,5 @@ export const AUTH_STATUS = {
     notAuthenticated: 'not-authenticated',
     authenticated: 'authenticated'
 }
+
+export const AUTH_STORAGE_KEY = 'ecommerce-token'

@@ -1,0 +1,17 @@
+.button-primary {
+    background: var(--primary-color);
+    color: var(--content-color);
+    border-radius: 0.5rem;
+    padding-inline: 1rem;
+    padding-block: 1.2rem;
+    font-size: 1.6rem;
+    margin-block-start: 1.2rem;
+}
+
+.button-primary:hover {
+    opacity: 0.9;
+}
+
+.button-primary:active {
+    transform: scale(0.97);
+}

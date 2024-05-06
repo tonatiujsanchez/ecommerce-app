@@ -3,25 +3,29 @@ import { AUTH_STATUS } from '../../constants'
 
 
 export const authSlice = createSlice({
-   name: 'auth',
-   initialState: {
-       user: null,
-       status: AUTH_STATUS.checking,
-       hasError: null,
-       isLoading: false,
-   },
-   reducers: {
-       setUser: (state, action ) => {
-           state.user     = action.payload
-           state.status   = AUTH_STATUS.authenticated
-           state.hasError = false
-       },
-       setIsLoading:(state, action) => {
-           state.isLoading = action.payload
-       }
+    name: 'auth',
+    initialState: {
+        user: null,
+        status: AUTH_STATUS.checking,
+        hasAuthError: null,
+    },
+    reducers: {
+        login: (state, action) => {
+            state.user = action.payload
+            state.status = AUTH_STATUS.authenticated
+            state.hasAuthError = null
+        },
+        logout: (state) => {
+            state.user = null
+            state.status = AUTH_STATUS.notAuthenticated
+            state.hasAuthError = null
+        },
+        setHasAuthError: (state, action) => {
+            state.hasAuthError = action.payload
+        }
     }
 })
 
 
 
-export const { setUser, setIsLoading } = authSlice.actions
+export const { login, logout, setHasAuthError } = authSlice.actions

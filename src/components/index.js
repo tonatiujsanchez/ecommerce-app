@@ -8,5 +8,6 @@ export * from './HomePage/SlideShow'
 
 export * from './Shared/Header'
 export * from './Shared/MsgError'
+export * from './Shared/PrimaryButton'
 
 export * from './Icons'
