@@ -1,3 +1,5 @@
+@import url('./animations.css');
+
 :root {
 	/*========== Fuentes ==========*/
     --font-primary: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -6,12 +8,14 @@
 	--body-color: #f5f5f5;
 	--content-color: #FFF;
     --primary-color: #f85555;
+    --primary-light-color: rgba(248, 85, 85, 0.2);
 	--title-color: #333333;
 	--text-color: #302F2F;
 	--silver-color: #EBEBEB;
 	--text-light-color: #A0A0A0;
 	--boder-primary-color: rgb(223, 223, 223);
 	--red-color: rgba(221, 26, 26, 1);
+	--green-color: #10B981;
 
 
 	/*========== Sombras ==========*/

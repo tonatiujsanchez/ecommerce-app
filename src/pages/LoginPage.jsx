@@ -8,8 +8,9 @@ import './styles/loginPage.css'
 
 export const LoginPage = () => {
 
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, formState:{ errors } } = useForm()
     const dispatch = useDispatch()
+
     const [ isLoading, setIsLoading ] = useState(false)
     const { hasAuthError } = useSelector(state => state.auth)
 
@@ -21,11 +22,10 @@ export const LoginPage = () => {
         if( hasAuthError ) {
             console.log(hasAuthError)
         }
-        
     }
 
     return (
-        <div className="auth">
+        <main className="auth">
             <div className="auth__content">
                 <div className="auth__header">
                     <h1 className="auth__title">Welcome!</h1>
@@ -42,10 +42,13 @@ export const LoginPage = () => {
                             id="email"
                             className="auth__input"
                             { ...register('email', {
-                                required: true,
+                                required: 'Email is required',
                                 validate: value => value.trim() === '' ? 'Email is required' : undefined
                             })} 
                         />
+                        { errors.email && (
+                            <span className="auth__message-error">{ errors.email.message }</span>
+                        )}
                     </div>
                     <div className="auth__field">
                         <label className="auth__label" htmlFor="password">Password</label>
@@ -54,10 +57,13 @@ export const LoginPage = () => {
                             id="password"
                             className="auth__input" 
                             { ...register('password', {
-                                required: true,
+                                required: 'Password is required',
                                 validate: value => value.trim() === '' ? 'Password is required' : undefined
                             })} 
                         />
+                        { errors.password && (
+                            <span className="auth__message-error">{ errors.password.message }</span>
+                        )}
                     </div>
                     <PrimaryButton
                         type="submit"
@@ -75,6 +81,6 @@ export const LoginPage = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }

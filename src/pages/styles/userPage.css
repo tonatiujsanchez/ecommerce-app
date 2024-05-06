@@ -1,0 +1,98 @@
+.user {
+    margin-block-start: 10rem;
+    display: flex;
+    justify-content: center;
+}
+
+.user__content {
+    background-color: var(--content-color);
+    border-radius: 0.5rem;
+    padding-inline: 2rem;
+    padding-block: 3rem;
+    box-shadow: var(--shadow-primary);
+    width: 100%;
+    max-width: 38rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.user__letter {
+    background: var(--primary-light-color);
+    color: var(--primary-color);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+    margin-inline-start: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border: 0.7rem solid var(--content-color);
+    box-shadow: var(--shadow-primary);
+}
+
+.user__info {
+    flex: 1;
+}
+
+.user__header {
+    border-block-end: var(--border-primary);
+    padding-block-end: 2rem;
+}
+
+.user__name {
+    /* color: var(--primary-color); */
+}
+
+.user__username {
+    color: var(--text-light-color);
+}
+
+.user__list {
+    margin-block-start: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.user__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user__item span{
+    color: var(--text-light-color);
+    min-width: 6rem
+}
+
+.user__item p {
+    flex: 1;
+}
+
+.user__button-logout {
+    margin-block-start: 4rem;
+    font-size: 1.6rem;
+    color: var(--red-color);
+    width: auto;
+    margin-inline-start: auto;
+    display: flex;
+    gap: 0.5rem;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.5rem;
+}
+
+.user__button-logout svg{
+    width: 1.8rem;
+    aspect-ratio: 1;
+}
+
+.user__button-logout:active {
+    transform: scale(0.95);
+}
+
+.user__button-logout:hover {
+    background: var(--silver-color);
+}

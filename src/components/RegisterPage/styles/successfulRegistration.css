@@ -1,0 +1,42 @@
+.successful-registration {
+    background: var(--content-color);
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation-duration: calc(1s * 0.75);
+    animation-name: bounceIn;
+}
+
+.successful-registration svg {
+    width: 6rem;
+    height: 6rem;
+    color: var(--green-color);
+}
+
+.successful-registration__description {
+    font-size: 1.6rem;
+    max-width: 32rem;
+}
+
+.successful-registration__link {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    margin-block-start: 1rem;
+}
+
+.successful-registration__link:hover {
+    text-decoration: underline;
+}
+
+.successful-registration__link svg {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.5rem;
+    color: var(--primary-color);
+}

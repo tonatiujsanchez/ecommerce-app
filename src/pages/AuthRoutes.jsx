@@ -5,8 +5,7 @@ import { AUTH_STATUS } from '../constants'
 import './styles/routes.css'
 
 
-
-export const PrivateRoutes = () => {
+export const AuthRoutes = () => {
 
     const { status } = useSelector(state => state.auth)
 
@@ -19,8 +18,8 @@ export const PrivateRoutes = () => {
     }
 
     return (
-        status === AUTH_STATUS.authenticated 
+        status === AUTH_STATUS.notAuthenticated 
         ? <Outlet /> 
-        : <Navigate to="/login" />
+        : <Navigate to="/user" />
     )
 }

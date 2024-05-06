@@ -1,17 +1,17 @@
 import axios from 'axios'
-import { login, logout, setHasAuthError } from '../slices'
+import { login, logout, setHasAuthError, setRegistrationCompleted } from '../slices'
 import { AUTH_STORAGE_KEY } from '../../constants'
 
 
 export const createUser = ({ user }) => {
     const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/users'
-    return async () => {
+    return async (dispatch) => {
         try {
-            const { data } = await axios.post(url, user)
-            console.log(data)
+            await axios.post(url, user)
+            dispatch( setRegistrationCompleted(true) )
         } catch (error) {
-
-            console.log(error.response.data)
+            dispatch( setRegistrationCompleted(false) )
+            dispatch( setHasAuthError(error.response.data.error) )
         }
     }
 }
@@ -47,7 +47,15 @@ export const checkingAuth = () => {
             dispatch( login(data) )
         } catch (error) {
             dispatch( logout() )
+            localStorage.removeItem(AUTH_STORAGE_KEY)
         }
 
+    }
+}
+
+export const startLogout = () => {
+    return ( dispatch )=> {
+        dispatch( logout() )
+        localStorage.removeItem(AUTH_STORAGE_KEY)
     }
 }

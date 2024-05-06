@@ -8,6 +8,7 @@ export const authSlice = createSlice({
         user: null,
         status: AUTH_STATUS.checking,
         hasAuthError: null,
+        registrationCompleted:true
     },
     reducers: {
         login: (state, action) => {
@@ -22,10 +23,13 @@ export const authSlice = createSlice({
         },
         setHasAuthError: (state, action) => {
             state.hasAuthError = action.payload
+        },
+        setRegistrationCompleted: (state, action) => {
+            state.registrationCompleted = action.payload
         }
     }
 })
 
 
 
-export const { login, logout, setHasAuthError } = authSlice.actions
+export const { login, logout, setHasAuthError, setRegistrationCompleted } = authSlice.actions
