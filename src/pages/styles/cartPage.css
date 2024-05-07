@@ -1,0 +1,10 @@
+.cart {
+    margin-block-start: 5rem;
+}
+
+.cart__content {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+

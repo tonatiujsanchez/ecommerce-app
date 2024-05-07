@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { startLogin } from '../store/thunks'
+import { getCart, startLogin } from '../store/thunks'
 import { PrimaryButton } from '../components'
 import './styles/loginPage.css'
 
@@ -18,6 +18,7 @@ export const LoginPage = () => {
     const handleLoginSubmit = async(data) => {
         setIsLoading(true)
         await dispatch( startLogin({ email: data.email, password: data.password }) )
+        await dispatch( getCart() )
         setIsLoading(false)
         if( hasAuthError ) {
             console.log(hasAuthError)

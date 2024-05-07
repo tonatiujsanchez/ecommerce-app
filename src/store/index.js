@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { authSlice, categoriesSlice, productsSlice, filtersSlice } from './slices'
+import { authSlice, categoriesSlice, productsSlice, filtersSlice, cartSlice } from './slices'
 
 export const store = configureStore({
     reducer: {
@@ -7,5 +7,6 @@ export const store = configureStore({
         categories: categoriesSlice.reducer,
         auth: authSlice.reducer,
         filters: filtersSlice.reducer,
+        cart: cartSlice.reducer,
     },
 })

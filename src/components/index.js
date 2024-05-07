@@ -8,6 +8,10 @@ export * from './HomePage/SlideShow'
 
 export * from './RegisterPage/SuccessfulRegistration'
 
+export * from './CartPage/Summary'
+export * from './CartPage/CartList'
+export * from './CartPage/CartItem'
+
 export * from './Shared/Header'
 export * from './Shared/MsgError'
 export * from './Shared/PrimaryButton'

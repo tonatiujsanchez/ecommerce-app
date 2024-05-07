@@ -1,10 +1,40 @@
+import { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { addProductToCart, removeProductToCart } from '../../store/thunks'
+import { AUTH_STATUS } from '../../constants'
 import { HeartIcon, ShoppingCartIcon } from '../Icons'
 import { currencyFormatMXN } from '../../utilities'
 import './styles/productCard.css'
 
 export const ProductCard = ({ product }) => {
+
+    const [isLoadingCart, setIsLoadingCart] = useState(false)
+    const dispatch = useDispatch()
+    const { cartProducts } = useSelector( state => state.cart )
+    const { status } = useSelector( state => state.auth )
+
+    const navigate = useNavigate()
+    const isProductAdded = () => {
+        return cartProducts.find( cartProduct => cartProduct.productId === product.id )
+    }
+
+    const handleProductCart = async() => {
+
+        if( status !== AUTH_STATUS.authenticated ){
+            return navigate('/login')
+        }
+        
+        setIsLoadingCart(true)
+        if( isProductAdded() ){
+            await dispatch( removeProductToCart( isProductAdded().id ) )
+        }else {
+            await dispatch( addProductToCart( product ) )
+        }
+        setIsLoadingCart(false)
+    }
+
     return (
         <article className="product-card">
             <Link to={`/product/${ product.id }`}>
@@ -26,7 +56,18 @@ export const ProductCard = ({ product }) => {
             </div>
             <button className="product-card__btn-favorite"><HeartIcon /></button>
             <div className="product-card__btn-add-content">
-                <button className="product-card__btn-add"><ShoppingCartIcon /> Add to Cart</button>
+                <button 
+                    className="product-card__btn-add"
+                    onClick={ handleProductCart }
+                >
+                    {
+                        isLoadingCart
+                        ? <span>Loading...</span>
+                        :  isProductAdded()
+                            ? <> <ShoppingCartIcon /> Remove to Cart </>
+                            :<> <ShoppingCartIcon /> Add to Cart </>
+                    }
+                </button>
             </div>
         </article>
     )

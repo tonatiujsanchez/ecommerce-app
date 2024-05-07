@@ -1,0 +1,11 @@
+.cart-item {
+    display: flex;
+    gap: 2rem;
+    background: var(--content-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.cart-item__figure {
+    max-width: 10rem;
+}

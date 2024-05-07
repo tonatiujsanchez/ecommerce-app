@@ -1,16 +1,22 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { checkingAuth } from './store/thunks'
-import { AuthRoutes, HomePage, LoginPage, PrivateRoutes, RegisterPage, UserPage } from './pages'
+import { checkingAuth, getCart } from './store/thunks'
+import { AuthRoutes, CartPage, HomePage, LoginPage, PrivateRoutes, RegisterPage, UserPage } from './pages'
 import { Header } from './components'
 import './App.css'
 
 function App() {
 
     const dispatch = useDispatch()
+
+    const checkAuth = async() => {
+        await dispatch(checkingAuth())
+        await dispatch(getCart()) 
+    }
+
     useEffect(() => {
-      dispatch(checkingAuth())        
+        checkAuth()
     }, [])
     
 
@@ -24,10 +30,9 @@ function App() {
                     <Route path='/register' element={ <RegisterPage /> } />
                     <Route path='/login' element={ <LoginPage /> } />
                 </Route>
-                
 
                 <Route element={ <PrivateRoutes /> } >
-                    <Route path='/cart' element={ <h1>Cart Page</h1> } />
+                    <Route path='/cart' element={ <CartPage /> } />
                     <Route path='/purchases' element={ <h1>Purchases Page</h1> } />
                     <Route path='/user' element={ <UserPage /> } />
                 </Route>
