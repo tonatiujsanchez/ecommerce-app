@@ -6,6 +6,9 @@ export * from './HomePage/ProductCard'
 export * from './HomePage/ProductList'
 export * from './HomePage/SlideShow'
 
+export * from './ProductPage/ProductDetails'
+export * from './ProductPage/ProductSlideshow'
+
 export * from './RegisterPage/SuccessfulRegistration'
 
 export * from './CartPage/Summary'

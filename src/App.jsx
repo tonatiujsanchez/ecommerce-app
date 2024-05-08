@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { checkingAuth, getCart } from './store/thunks'
-import { AuthRoutes, CartPage, HomePage, LoginPage, PrivateRoutes, RegisterPage, UserPage } from './pages'
+import { AuthRoutes, CartPage, HomePage, LoginPage, PrivateRoutes, ProductPage, RegisterPage, UserPage } from './pages'
 import { Header } from './components'
 import './App.css'
 
@@ -25,7 +25,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path='/' element={ <HomePage /> } />
-                <Route path='/product/:id' element={ <h1>Product ID Page</h1> } />
+                <Route path='/product/:id' element={ <ProductPage /> } />
                 <Route element={ <AuthRoutes /> }>
                     <Route path='/register' element={ <RegisterPage /> } />
                     <Route path='/login' element={ <LoginPage /> } />

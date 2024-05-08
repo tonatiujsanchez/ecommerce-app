@@ -1,0 +1,26 @@
+.product {
+    margin-block-start: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product__info {
+    padding: 1rem;
+}
+
+@media (min-width: 769px){
+    .product {
+        flex-direction: row;
+    }
+
+    .product__slide {
+        max-width: 40rem;
+    }
+}
+
+@media (min-width: 944px ){
+    .product__slide {
+        max-width: 60rem;
+    }
+}

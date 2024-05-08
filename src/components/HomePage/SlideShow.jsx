@@ -18,7 +18,7 @@ export const SlideShow = () => {
                     delay: 3500,
                 }}
                 effect="fade"
-                className="slides-swiper"
+                className="slides-hero"
               >
                 {
                     slides.map( slide => (

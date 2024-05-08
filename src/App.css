@@ -26,6 +26,7 @@
 	/*========== Bordes ==========*/
 	--border-light: 0.1rem solid rgb(240, 240, 240, 0.9);
 	--border-primary: 0.1rem solid var(--boder-primary-color);
+	--border-primary-color: 0.1rem solid var(--primary-color);
 }
 
 html {
@@ -90,6 +91,12 @@ button {
 
 .container {
     max-width: 134rem;
+    margin-inline: auto;
+	padding-inline: 1rem;
+}
+
+.container-sm {
+	max-width: 100rem;
     margin-inline: auto;
 	padding-inline: 1rem;
 }

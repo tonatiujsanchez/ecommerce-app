@@ -30,11 +30,11 @@
 }
 
 /* Swiper Buttons */
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+.slides-hero .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
     /* color: var(--primary-color); */
     content: "";
 }
-.swiper-button-prev::after {
+.slides-hero .swiper-button-prev::after {
     /* color: var(--primary-color); */
     content: "";
 }
