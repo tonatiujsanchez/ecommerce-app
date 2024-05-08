@@ -16,5 +16,8 @@ export * from './Shared/Header'
 export * from './Shared/MsgError'
 export * from './Shared/PrimaryButton'
 export * from './Shared/MainLoader'
+export * from './Shared/Modal'
+export * from './Shared/ModalDelete'
+export * from './Shared/Loader'
 
 export * from './Icons'

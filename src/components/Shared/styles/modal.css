@@ -1,0 +1,84 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal__content {
+    background: var(--content-color);
+    border-radius: 0.5rem;
+    padding: 2.5rem 2.5rem;
+    z-index: 10;
+    max-height: 100vh;
+    overflow-y: auto;
+    animation: slideInFromTop 0.2s ease-out;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.modal__title {
+    font-weight: 800;
+}
+
+.modal__close-button {
+    display: block;
+    border: var(--border-primary);
+    color: var(--text-light-color);
+    background: none;
+    width: 3rem;
+    aspect-ratio: 1;
+    margin-inline-start: auto;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.modal__close-button svg {
+    width: 2.4rem;
+    height: 2rem;
+    aspect-ratio: 1;
+}
+
+.modal__close-button:hover {
+    background: var(--silver-color);
+    color: var(--text-color);
+}
+
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-15%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

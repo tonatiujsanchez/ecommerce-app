@@ -86,6 +86,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    min-height: 3.7rem;
 }
 
 .product-card__btn-add svg{

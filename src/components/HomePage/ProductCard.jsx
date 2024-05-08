@@ -59,13 +59,12 @@ export const ProductCard = ({ product }) => {
                 <button 
                     className="product-card__btn-add"
                     onClick={ handleProductCart }
+                    disabled={ isLoadingCart }
                 >
                     {
-                        isLoadingCart
-                        ? <span>Loading...</span>
-                        :  isProductAdded()
-                            ? <> <ShoppingCartIcon /> Remove to Cart </>
-                            :<> <ShoppingCartIcon /> Add to Cart </>
+                        isProductAdded()
+                            ? isLoadingCart ? <span> Removing...</span> : <> <ShoppingCartIcon /> Remove to Cart </>
+                            : isLoadingCart ? <span> Adding...</span> : <> <ShoppingCartIcon /> Add to Cart </>
                     }
                 </button>
             </div>

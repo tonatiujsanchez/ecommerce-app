@@ -5,7 +5,7 @@ import './styles/cartList.css'
 export const CartList = ({ cartProducts }) => {
 
     return (
-        <section>
+        <section className="cart-list__section">
             <ul className="cart-list">
                 { cartProducts.map(cartProduct => (
                     <CartItem key={ cartProduct.id } cartProduct={ cartProduct } />

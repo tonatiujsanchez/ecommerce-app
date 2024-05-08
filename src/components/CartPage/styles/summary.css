@@ -1,0 +1,37 @@
+.summary {
+    width: 100%;
+    background: var(--content-color);
+    border-radius: 0.5rem;
+    padding: 2rem 3rem;
+    position: sticky;
+    inset-block-start: 8rem;
+    margin-block-end: 8rem;
+}
+
+.summary__list {
+    margin-block-start: 1rem;
+    margin-block-end: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary__item--total {
+    margin-block-start: 2rem;
+    font-weight: 700;
+}
+
+.summary button {
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    .summary {
+        max-width: 38rem;
+    }
+}

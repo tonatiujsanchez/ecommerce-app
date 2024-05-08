@@ -1,10 +1,33 @@
 .cart {
-    margin-block-start: 5rem;
+    margin-block-start: 2rem;
+    margin-block-end: 10rem;
+}
+
+.cart__container {
+    max-width: 100rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.cart__heading {
+    margin-block-end: 2rem;
 }
 
 .cart__content {
     display: flex;
-    justify-content: space-evenly;
-    gap: 5rem;
+    /* justify-content: center; */
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6rem;
 }
 
+
+@media (min-width: 668px){
+    .cart {
+        margin-block-start: 5rem;
+    }
+
+    .cart__content {
+        flex-direction: row;
+    }
+}
