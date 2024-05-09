@@ -17,13 +17,13 @@ export const getCart = () => {
     }
 }
 
-export const addProductToCart = (product) => {
+export const addProductToCart = (product, quantity=1) => {
     return async( dispatch ) => {
         try {
             const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart'
             const body = {
-                quantity :1, 
-                productId:product.id
+                productId:product.id,
+                quantity
             }
             const { data } = await axios.post(url, body, { headers: getHeaders() })
             data.product = product            

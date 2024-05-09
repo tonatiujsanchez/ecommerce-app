@@ -7,6 +7,7 @@ export const productsSlice = createSlice({
         isLoadingProducts: true,
         hasErrorProducts: null,
         productSelected: null,
+        similarProducts: []
     },
     reducers: {
         setProducts: (state, action) => {
@@ -22,6 +23,9 @@ export const productsSlice = createSlice({
         },
         setProductSelected: (state, action) => {
             state.productSelected = action.payload
+        },
+        setSimilarProducts: (state, action) => {
+            state.similarProducts = action.payload
         }
     }
 })
@@ -32,5 +36,6 @@ export const {
     setProducts, 
     setIsLoadingProducts, 
     setHasErrorProducts,
-    setProductSelected
+    setProductSelected,
+    setSimilarProducts
 } = productsSlice.actions

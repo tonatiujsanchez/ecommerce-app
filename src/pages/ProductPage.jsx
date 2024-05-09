@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../store/thunks'
-import { setProductSelected } from '../store/slices'
-import { MainLoader, ProductDetails } from '../components'
+import { setProductSelected, setSimilarProducts } from '../store/slices'
+import { MainLoader, ProductDetails, SimilarProducts } from '../components'
 
 export const ProductPage = () => {
     
@@ -18,6 +18,7 @@ export const ProductPage = () => {
 
         return ()=>{
             dispatch( setProductSelected(null) )
+            dispatch(setSimilarProducts([]))
         }
     },[ params.id ])
 
@@ -37,12 +38,16 @@ export const ProductPage = () => {
     }
 
     return (
-        <div className="container-sm">
+        <div className="container">
             {
                 productSelected && (
                     <ProductDetails product={ productSelected } />
                 )
             }
+            <SimilarProducts
+                categoryId={ productSelected?.categoryId }
+                productId={ productSelected?.id }
+            />
         </div>
     )
 }

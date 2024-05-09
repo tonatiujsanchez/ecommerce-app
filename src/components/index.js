@@ -8,6 +8,7 @@ export * from './HomePage/SlideShow'
 
 export * from './ProductPage/ProductDetails'
 export * from './ProductPage/ProductSlideshow'
+export * from './ProductPage/SimilarProducts'
 
 export * from './RegisterPage/SuccessfulRegistration'
 
