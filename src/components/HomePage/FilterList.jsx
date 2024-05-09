@@ -1,19 +1,30 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { setSelectedCategory, setSelectedPrice } from '../../store/slices'
+import { setSearchTerm, setSelectedCategory, setSelectedPrice } from '../../store/slices'
 import { XIcon } from '../Icons'
 import './styles/filterList.css'
 
 export const FilterList = () => {
 
     const dispatch = useDispatch()
-    const { selectedCategory, selectedPrice } = useSelector(state => state.filters)
+    const { selectedCategory, selectedPrice, searchTerm } = useSelector(state => state.filters)
 
-    if( !selectedCategory && !selectedPrice ){
+    if( !selectedCategory && !selectedPrice && !searchTerm ){
         return <></>
     }
 
     return (
         <ul className="filter-list">
+            { searchTerm && (
+                <li className="filter-item">
+                    <span>{ searchTerm }</span>
+                    <button 
+                        type="button"
+                        onClick={()=> dispatch( setSearchTerm(null) )}
+                    >
+                        <XIcon />
+                    </button>
+                </li>
+            )}
             { selectedCategory && (
                 <li className="filter-item">
                     <span>{ selectedCategory.name }</span>

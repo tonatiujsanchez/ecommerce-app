@@ -6,12 +6,19 @@ export const useGetProducts = () => {
     
     const dispatch = useDispatch()
     const { products:allProducts, isLoadingProducts, hasErrorProducts } = useSelector(state => state.products)
-    const { selectedCategory, selectedPrice } = useSelector(state => state.filters)
+    const { selectedCategory, selectedPrice, searchTerm } = useSelector(state => state.filters)
 
     const [products, setProducts] = useState( allProducts )
 
     useEffect(() => {
         let currentProducts = allProducts
+
+        // Filtrar por SearchTerm
+        if( searchTerm ){
+            currentProducts= currentProducts.filter( product => (
+                product.title.trim().toLowerCase().includes(searchTerm.trim().toLowerCase())
+            ))
+        }
 
         // filtrar por categoría
         if( selectedCategory ){
@@ -27,7 +34,7 @@ export const useGetProducts = () => {
 
         setProducts( currentProducts )
         
-    }, [allProducts, selectedCategory, selectedPrice])
+    }, [allProducts, selectedCategory, selectedPrice, searchTerm])
 
 
     const getAllProdcuts = () => {

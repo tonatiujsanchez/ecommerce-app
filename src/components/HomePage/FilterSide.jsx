@@ -1,4 +1,4 @@
-import { FilterByCategory,FilterByPrice, FilterIcon, FilterList } from '../../components'
+import { FilterByCategory,FilterByPrice, FilterByTerm, FilterIcon, FilterList } from '../../components'
 import './styles/filterSide.css'
 
 export const FilterSide = () => {
@@ -9,6 +9,7 @@ export const FilterSide = () => {
                 <FilterIcon/> Filters
             </h2>
             <FilterList />
+            <FilterByTerm />
             <FilterByPrice />
             <FilterByCategory />
         </aside>

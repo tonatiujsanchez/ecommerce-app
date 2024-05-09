@@ -7,7 +7,8 @@
     inset-inline-start: 0;
     z-index: 10;
     background-color: var(--content-color);
-    padding: 2rem;
+    padding-inline: 2rem;
+    padding-block: 3.5rem;
 }
 
 .filter-side__heading {
