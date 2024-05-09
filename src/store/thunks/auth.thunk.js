@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { toastError } from '../../libs'
 import { login, logout, setHasAuthError, setRegistrationCompleted } from '../slices'
 import { AUTH_STORAGE_KEY } from '../../constants'
 
@@ -12,6 +13,8 @@ export const createUser = ({ user }) => {
         } catch (error) {
             dispatch( setRegistrationCompleted(false) )
             dispatch( setHasAuthError(error.response.data.error) )
+            toastError(error.response.data.error)
+
         }
     }
 }
@@ -26,6 +29,7 @@ export const startLogin = ({ email, password }) => {
             localStorage.setItem(AUTH_STORAGE_KEY, data.token)
         } catch (error) {
             dispatch( setHasAuthError(error.response.data.error) )
+            toastError(error.response.data.error)
         }
     }
 }
@@ -46,6 +50,7 @@ export const checkingAuth = () => {
             }})
             dispatch( login(data) )
         } catch (error) {
+            toastError(error.response.data.error)
             dispatch( logout() )
             localStorage.removeItem(AUTH_STORAGE_KEY)
         }

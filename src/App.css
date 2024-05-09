@@ -104,3 +104,10 @@ button {
 .main {
 	padding-block: 2rem;
 }
+
+
+/* ====== ====== ====== TOAST ====== ====== ======  */
+.toast {
+    padding: 1.2rem;
+	font-size: 1.6rem;
+}

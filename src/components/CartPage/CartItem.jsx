@@ -47,7 +47,7 @@ export const CartItem = ({ cartProduct }) => {
     }
 
     return (
-        <li className={`cart-item ${ (isLoadingRemove || isLoadingUpdate) && 'cart-item--prosessing' }`}>
+        <li className={`cart-item ${ isLoadingUpdate && 'cart-item--prosessing' }`}>
             <figure className="cart-item__figure">
                 <img src={ product.images[0].url } alt={ product.title } />
             </figure>

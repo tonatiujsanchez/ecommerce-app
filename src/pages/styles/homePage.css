@@ -6,3 +6,18 @@
     gap: 4rem;
     padding-block-end: 10rem;
 }
+
+.main__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+    animation: fadeIn 0.2s ease-out;
+    z-index: 19;
+}
+
+@media (min-width: 992px){
+    .main__overlay {
+        display: none;
+    }
+}

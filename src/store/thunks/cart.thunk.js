@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { toastError } from '../../libs'
 import { setAddProductToCart, setCart, setHasCartError, setRemoveProductToCart, setUpdateCuantityFromProductCart } from '../slices'
 import { getHeaders } from '../../utilities'
 
@@ -29,6 +30,8 @@ export const addProductToCart = (product, quantity=1) => {
             data.product = product            
             dispatch( setAddProductToCart(data) )
         } catch (error) {
+            console.log(error)
+            toastError(error.response.data.error)
             dispatch( setHasCartError(error.response.data) )
         }
     }
@@ -42,6 +45,7 @@ export const removeProductToCart = ( idProduct ) => {
             dispatch( setRemoveProductToCart(idProduct) )
         } catch (error) {
             dispatch( setHasCartError(error.response.data) )
+            toastError(error.response.data)
         }
     }
 }
@@ -54,6 +58,7 @@ export const updateQuantityToCartProduct = (idCartProduct, quantity) => {
             dispatch(setUpdateCuantityFromProductCart({ id: data.id, quantity }))
         } catch (error) {
             dispatch( setHasCartError(error.response.data) )
+            toastError(error.response.data)
         }
     }
 }

@@ -11,9 +11,10 @@ import './styles/productCard.css'
 export const ProductCard = ({ product }) => {
 
     const [isLoadingCart, setIsLoadingCart] = useState(false)
-    const dispatch = useDispatch()
+
     const { cartProducts } = useSelector( state => state.cart )
     const { status } = useSelector( state => state.auth )
+    const dispatch = useDispatch()
 
     const navigate = useNavigate()
     const isProductAdded = () => {
@@ -37,13 +38,23 @@ export const ProductCard = ({ product }) => {
 
     return (
         <article className="product-card">
-            <Link to={`/product/${ product.id }`}>
-                <figure className="product-card__figure">
+            <Link 
+                to={`/product/${ product.id }`}
+            >
+                <figure
+                    className="product-card__figure"
+                >
                     <img 
-                        src={ product.images[0].url } 
+                        src={ product.images[0].url} 
                         alt={ product.title }
                         title={ product.title }
-                        className="product-card__img"
+                        className="product-card__img product-card__img-one"
+                    />
+                    <img 
+                        src={ product.images[1].url} 
+                        alt={ product.title }
+                        title={ product.title }
+                        className="product-card__img product-card__img-two"
                     />
                 </figure>
             </Link>

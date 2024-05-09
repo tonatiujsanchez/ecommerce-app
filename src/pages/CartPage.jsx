@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCart } from '../store/thunks/cart.thunk'
-import { CartList, Summary } from '../components'
+import { CartList, MainLoader, ShoppingCartIcon, Summary } from '../components'
 import './styles/cartPage.css'
 export const CartPage = () => {
 
     const dispatch = useDispatch()
-    const { cartProducts } = useSelector(state => state.cart)
+    const { cartProducts, isCartLoading } = useSelector(state => state.cart)
     
     useEffect(() => {
         if( cartProducts.length === 0 ) {
@@ -14,6 +14,22 @@ export const CartPage = () => {
         }
     }, [])
     
+    if( isCartLoading ){
+        return (
+            <div className="cart-loader__content">
+                <MainLoader />
+            </div>
+        )
+    }
+
+    if( cartProducts.length === 0 ){
+        return (
+            <div className="cart-empty">
+                <ShoppingCartIcon />
+                <p>Your shopping cart is empty</p>
+            </div>
+        )
+    }
 
     return (
         <main className="cart">

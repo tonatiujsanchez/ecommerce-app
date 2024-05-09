@@ -12,6 +12,7 @@
     box-shadow: var(--shadow-primary);
 }
 
+
 .product-card__img {
     width: 100%;
     margin-inline:auto;
@@ -19,8 +20,20 @@
     transition: all 0.3s;
 }
 
+.product-card__img-two {
+    display: none;
+}
+
 .product-card__figure:hover .product-card__img {
     opacity: 0.8;
+}
+
+.product-card__figure:hover .product-card__img-one {
+    display: none;
+}
+
+.product-card__figure:hover .product-card__img-two {
+    display: block;
 }
 
 .product-card__brand {

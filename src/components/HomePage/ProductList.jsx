@@ -1,11 +1,14 @@
 import { useEffect } from 'react'
-import { ProductCard } from './ProductCard'
+import { useDispatch } from 'react-redux'
+import { setShowFilterSidebar } from '../../store/slices'
+import { ProductCard, MainLoader, FilterIcon, FilterList } from '../../components'
 import { useGetProducts } from '../../hooks/useGetProducts'
 import './styles/productList.css'
 
 export const ProductList = () => {
 
     const { products, getProducts, isLoadingProducts, hasErrorProducts } = useGetProducts()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         if( products.length === 0 ){
@@ -13,9 +16,15 @@ export const ProductList = () => {
         }
     }, [])
 
+    const handleShowFilters = () => {
+        dispatch(setShowFilterSidebar(true))
+    }
+
     if( isLoadingProducts ){
         return (
-            <p>Loading products...</p>
+            <div className="product-list-loader__content">
+                <MainLoader />
+            </div>
         )
     }
 
@@ -26,11 +35,31 @@ export const ProductList = () => {
     }
     
     return (
-        <section className="product-list">
+        <section className="product-list__section">
+            <div className="product-list__filters">
+                <button
+                    className="product-list__filter-button"
+                    onClick={ handleShowFilters }
+                >
+                    <FilterIcon /> Filters
+                </button>
+                <FilterList />
+            </div>
             {
-                products.map( product => (
-                    <ProductCard key={ product.id } product={ product } />
-                ))
+                products.length === 0 
+                ?(
+                    <div className="product-list__without-results">
+                        <p>Sin resultados</p>
+                    </div>
+                ):(
+                    <div className="product-list">
+                        {
+                            products.map( product => (
+                                <ProductCard key={ product.id } product={ product } />
+                            ))
+                        }
+                    </div>
+                )
             }
         </section>
     )

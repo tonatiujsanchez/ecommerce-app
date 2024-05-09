@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../store/thunks'
 import { useEffect, useState } from 'react'
+import { setShowFilterSidebar } from '../store/slices'
 
 export const useGetProducts = () => {
     
@@ -33,6 +34,7 @@ export const useGetProducts = () => {
         }
 
         setProducts( currentProducts )
+        dispatch( setShowFilterSidebar(false) )
         
     }, [allProducts, selectedCategory, selectedPrice, searchTerm])
 

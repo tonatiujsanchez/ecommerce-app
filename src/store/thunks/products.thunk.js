@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { toastError } from '../../libs'
 import {setProducts, setIsLoadingProducts, setHasErrorProducts, setProductSelected, setSimilarProducts } from '../slices/products.slice'
 
 
@@ -9,6 +10,7 @@ export const getProducts = () => {
             dispatch(setProducts(data))
         } catch (error) {
             console.log(error)
+            toastError(error.response.data)
             dispatch( setHasErrorProducts('There was an error loading the products') )
         } finally {
             dispatch(setIsLoadingProducts(false))
@@ -23,6 +25,7 @@ export const getProductsByCategory = (categoryId) => {
             dispatch(setSimilarProducts(data))
         } catch (error) {
             console.log(error)
+            toastError(error.response.data)
             dispatch( setHasErrorProducts('There was an error loading the products') )
         }
     }
@@ -37,6 +40,7 @@ export const getProductById = ( id ) => {
             dispatch( setProductSelected(data) )
         } catch (error) {
             console.log(error)
+            toastError(error.response.data)
             dispatch( setHasErrorProducts('There was an error loading the product') )
         } finally {
             dispatch(setIsLoadingProducts(false))
