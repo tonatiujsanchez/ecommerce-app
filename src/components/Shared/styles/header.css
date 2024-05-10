@@ -35,6 +35,25 @@
     transition: all 0.3s;
 }
 
+.nav__item--shopping-cart {
+    position: relative;
+}
+
+.nav__item--shopping-cart span {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: var(--content-color);
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
 .nav__link:hover {
     background: var(--silver-color);
     color: var(--primary-color);

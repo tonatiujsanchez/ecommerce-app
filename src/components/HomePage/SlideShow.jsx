@@ -27,6 +27,7 @@ export const SlideShow = () => {
                                 className="slide"
                                 style={{ backgroundImage: `url(${ slide.banner })` }}
                             >
+                                <div className="slide__overlay"></div>
                                 <div className="slide__content">
                                     <h3 className="slide__title">{ slide.title }</h3>
                                     <p className="slide__description">{ slide.description }</p>

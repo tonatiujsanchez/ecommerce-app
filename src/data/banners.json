@@ -1,30 +1,30 @@
 [
     {
         "id": 2,
-        "title": "¡Encuentra tu smartphone ideal!",
+        "title": "Find your ideal smartphone!",
         "banner": "/images/banner_02.webp",
-        "description": "Descubre una amplia gama de smartphones con las últimas características y tecnologías.",
+        "description": "Discover a wide range of smartphones with the latest features and technologies.",
         "category": "Smartphones"
     },
     {
         "id": 3,
-        "title": "¡Transforma tu sala con nuestras Smart TVs!",
+        "title": "Transform your living room with our Smart TVs!",
         "banner": "/images/banner_04.webp",
-        "description": "Disfruta de una experiencia de visualización excepcional con nuestras Smart TVs de alta calidad.",
+        "description": "Enjoy an exceptional viewing experience with our high-quality Smart TVs.",
         "category": "Smart TV"
     },
     {
         "id": 4,
-        "title": "¡Potencia tu trabajo con una MacBook!",
+        "title": "Power your work with a MacBook!",
         "banner": "/images/banner_07.webp",
-        "description": "Descubre la potencia y la portabilidad de una MacBook para llevar tu productividad al siguiente nivel.",
+        "description": "Discover the power and portability of a MacBook to take your productivity to the next level.",
         "category": "Computers"
     },
     {
         "id": 5,
-        "title": "¡Equipa tu cocina con nuestras mejores estufas!",
+        "title": "Equip your kitchen with our best stoves!",
         "banner": "/images/banner_08.webp",
-        "description": "Encuentra la estufa perfecta para tu cocina entre nuestra selección de modelos de alta calidad.",
+        "description": "Find the perfect stove for your kitchen among our selection of high-quality models.",
         "category": "Kitchen"
     }
 ]

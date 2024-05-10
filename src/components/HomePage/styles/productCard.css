@@ -90,8 +90,6 @@
     background-color: var(--primary-color);
     text-transform: uppercase;
     width: 100%;
-    visibility: hidden;
-    opacity: 0;
     transition: all 0.3s;
     font-size: 1.2rem;
     font-weight: 600;
@@ -113,4 +111,16 @@
 .product-card:hover .product-card__btn-add {
     visibility: visible;
     opacity: 1;
+}
+
+@media (min-width: 768px){
+    .product-card__btn-add {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .product-card:hover .product-card__btn-add {
+        visibility: visible;
+        opacity: 1;
+    }
 }

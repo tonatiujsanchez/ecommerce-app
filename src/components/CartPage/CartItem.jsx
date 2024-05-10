@@ -76,7 +76,7 @@ export const CartItem = ({ cartProduct }) => {
                         type="number" 
                         value={ quantity || 1}
                         onChange={ () => {console.log('onChange...')} }
-                        disabled={ isLoadingUpdate ||  isLoadingRemove }
+                        disabled={ true }
                         className="cart-item__form-input"
                     />
                     <button

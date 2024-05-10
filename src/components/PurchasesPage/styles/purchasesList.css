@@ -1,0 +1,7 @@
+.purchases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 65rem;
+    margin-inline: auto;
+}

@@ -1,0 +1,49 @@
+.purchase {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.purchase__figure {
+    width: 100%;
+    height: 14rem;
+    background: var(--content-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.purchase__figure img{
+    object-fit: contain;
+}
+
+.purchase__title {
+    font-size: 1.4rem;
+    max-width: 20rem;
+}
+
+.purchase__quantity {
+    background-color: var(--content-color);
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: var(--border-light);   
+}
+
+.purchase__subtotal {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 500px){
+    .purchase {
+        gap: 2rem;
+        justify-content: space-between;
+    }
+    
+    .purchase__figure {
+        width: 14rem;
+        height: 10rem;
+    }
+}

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 export const uiSlice = createSlice({
    name: 'ui',
@@ -10,8 +10,8 @@ export const uiSlice = createSlice({
            state.showFilterSidebar =  action.payload
        },
     }
-});
+})
 
 
 
-export const { setShowFilterSidebar } = uiSlice.actions;
+export const { setShowFilterSidebar } = uiSlice.actions

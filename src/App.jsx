@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { checkingAuth, getCart } from './store/thunks'
-import { AuthRoutes, CartPage, HomePage, LoginPage, PrivateRoutes, ProductPage, RegisterPage, UserPage } from './pages'
+import { AuthRoutes, CartPage, HomePage, LoginPage, PrivateRoutes, ProductPage, PurchasesPage, RegisterPage, UserPage } from './pages'
 import { Header } from './components'
 import './App.css'
 
@@ -33,7 +33,7 @@ function App() {
 
                 <Route element={ <PrivateRoutes /> } >
                     <Route path='/cart' element={ <CartPage /> } />
-                    <Route path='/purchases' element={ <h1>Purchases Page</h1> } />
+                    <Route path='/purchases' element={ <PurchasesPage /> } />
                     <Route path='/user' element={ <UserPage /> } />
                 </Route>
                 <Route path="*" element={<Navigate to="/" />} />

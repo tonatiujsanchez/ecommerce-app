@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { toastError } from '../../libs'
+import { toastError, toastSuccess } from '../../libs'
 import { setAddProductToCart, setCart, setHasCartError, setRemoveProductToCart, setUpdateCuantityFromProductCart } from '../slices'
 import { getHeaders } from '../../utilities'
 
@@ -29,6 +29,7 @@ export const addProductToCart = (product, quantity=1) => {
             const { data } = await axios.post(url, body, { headers: getHeaders() })
             data.product = product            
             dispatch( setAddProductToCart(data) )
+            toastSuccess('Product added to cart')
         } catch (error) {
             console.log(error)
             toastError(error.response.data.error)

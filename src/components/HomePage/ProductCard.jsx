@@ -7,6 +7,7 @@ import { AUTH_STATUS } from '../../constants'
 import { HeartIcon, ShoppingCartIcon } from '../Icons'
 import { currencyFormatMXN } from '../../utilities'
 import './styles/productCard.css'
+import { toastError } from '../../libs'
 
 export const ProductCard = ({ product }) => {
 
@@ -65,7 +66,13 @@ export const ProductCard = ({ product }) => {
                 </Link>
                 <p className="product-card__price">{ currencyFormatMXN(product.price) }</p>
             </div>
-            <button className="product-card__btn-favorite"><HeartIcon /></button>
+            <button 
+                type="button"
+                className="product-card__btn-favorite"
+                onClick={()=> toastError('Functionality in construction')}
+            >
+                <HeartIcon />
+            </button>
             <div className="product-card__btn-add-content">
                 <button 
                     className="product-card__btn-add"

@@ -7,6 +7,7 @@ import { currencyFormatMXN } from '../../utilities'
 import './styles/productDetails.css'
 import { addProductToCart } from '../../store/thunks'
 import { AUTH_STATUS } from '../../constants'
+import { toastError } from '../../libs'
 
 export const ProductDetails = ({ product }) => {
 
@@ -64,7 +65,7 @@ export const ProductDetails = ({ product }) => {
                             type="number"
                             value={quantity}
                             onChange={({ target }) => setQuantity( target.value )}
-                            disabled={isAddingProductToCart}
+                            disabled={true}
                             className="product__form-input"
                         />
                         <button
@@ -81,11 +82,15 @@ export const ProductDetails = ({ product }) => {
                             disabled={ isAddingProductToCart }
                             onClick={ handleAddProductToCart }
                         >
-                            { isAddingProductToCart ? <> <Loader /> Is Adding</> : <><ShoppingCartIcon /> Add to cart</> }
+                            { isAddingProductToCart ? <> <Loader /> Adding... </> : <><ShoppingCartIcon /> Add to cart</> }
                         </PrimaryButton>
                     </div>
                 </div>
-                <button className="product__button-favorites">
+                <button
+                    type="button" 
+                    className="product__button-favorites"
+                    onClick={()=> toastError('Functionality in construction')}
+                >
                     <HeartIcon /> Add to Favorites
                 </button>
             </div>

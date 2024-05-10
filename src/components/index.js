@@ -17,6 +17,9 @@ export * from './CartPage/CartItem'
 export * from './CartPage/CartList'
 export * from './CartPage/Summary'
 
+export * from './PurchasesPage/PurchasesList'
+export * from './PurchasesPage/PurchasesItem'
+
 export * from './Shared/Header'
 export * from './Shared/Loader'
 export * from './Shared/MainLoader'

@@ -1,0 +1,27 @@
+.purchases {
+    margin-block-start: 2rem;
+    margin-block-end: 10rem;
+}
+
+.purchases-loader__content {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 16rem;
+}
+
+.purchases__container {
+    max-width: 100rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.purchases__heading {
+    margin-block-end: 2rem;
+}
+
+.purchases__content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6rem;
+}
