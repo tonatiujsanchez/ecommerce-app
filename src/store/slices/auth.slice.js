@@ -8,7 +8,7 @@ export const authSlice = createSlice({
         user: null,
         status: AUTH_STATUS.checking,
         hasAuthError: null,
-        registrationCompleted:true
+        registrationCompleted:false
     },
     reducers: {
         login: (state, action) => {
