@@ -28,6 +28,14 @@ export const PurchasesPage = () => {
             <p>{ hasPurcharsesError }</p>
         )
     }
+
+    if( purchases.length === 0 ){
+        return (
+            <div className="purchases-empty">
+                <p>No purchases to show</p>
+            </div>
+        )
+    }
     
 
     return (

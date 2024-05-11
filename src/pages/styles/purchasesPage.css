@@ -25,3 +25,24 @@
     flex-direction: column;
     gap: 6rem;
 }
+
+
+.purchases-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-block-start: 16rem;
+    color: var(--text-light-color);
+}
+
+.purchases-empty p {
+    color: var(--text-light-color);
+}
+
+
+.purchases-empty svg {
+    min-width: 5rem;
+    height: 6rem;
+}
