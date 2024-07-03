@@ -6,7 +6,7 @@ import {setProducts, setIsLoadingProducts, setHasErrorProducts, setProductSelect
 export const getProducts = () => {
     return async(dispatch) => {
         try {
-            const { data } = await axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/products')
+            const { data } = await axios.get(`${import.meta.env.VITE_BASE_URL}/products`)
             dispatch(setProducts(data))
         } catch (error) {
             console.log(error)
@@ -21,7 +21,7 @@ export const getProducts = () => {
 export const getProductsByCategory = (categoryId) => {
     return async(dispatch) => {
         try {
-            const { data } = await axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${categoryId}`)
+            const { data } = await axios.get(`${import.meta.env.VITE_BASE_URL}/products?categoryId=${categoryId}`)
             dispatch(setSimilarProducts(data))
         } catch (error) {
             console.log(error)
@@ -36,7 +36,7 @@ export const getProductById = ( id ) => {
     return async(dispatch) => {
         dispatch(setIsLoadingProducts(true))
         try {
-            const { data } = await axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products/${ id }`)
+            const { data } = await axios.get(`${import.meta.env.VITE_BASE_URL}/products/${ id }`)
             dispatch( setProductSelected(data) )
         } catch (error) {
             console.log(error)

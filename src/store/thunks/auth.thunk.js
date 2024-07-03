@@ -5,7 +5,7 @@ import { AUTH_STORAGE_KEY } from '../../constants'
 
 
 export const createUser = ({ user }) => {
-    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/users'
+    const url = `${import.meta.env.VITE_BASE_URL}/users`
     return async (dispatch) => {
         try {
             await axios.post(url, user)
@@ -21,7 +21,7 @@ export const createUser = ({ user }) => {
 
 
 export const startLogin = ({ email, password }) => {
-    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login'
+    const url = `${import.meta.env.VITE_BASE_URL}/users/login`
     return async ( dispatch ) => {
         try {
             const { data } = await axios.post( url, { email, password } )
@@ -35,7 +35,7 @@ export const startLogin = ({ email, password }) => {
 }
 
 export const checkingAuth = () => {
-    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/me'
+    const url = `${import.meta.env.VITE_BASE_URL}/users/me`
     return async ( dispatch ) => {
 
         const token = localStorage.getItem(AUTH_STORAGE_KEY)

@@ -40,7 +40,12 @@ git clone https://github.com/tonatiujsanchez/ecommerce-app.git
 npm install
 ```
 
-3. **Corre el proyecto:** Ejecuta el siguiente comando para correr el proyecto de modo desarrollo:
+3. **Ingresa las variables de entorno:** Modifica en archivo .env.example a .env y agrega la siguiente variable de entorno con los valores correspondientes a la API:
+```
+VITE_BASE_URL=
+```
+
+4. **Corre el proyecto:** Ejecuta el siguiente comando para correr el proyecto de modo desarrollo:
 ```
 npm run dev
 ```

@@ -5,7 +5,7 @@ import { setCategories, setHasErrorCategories, setIsLoadingCategories } from '..
 export const getCategories = () => {
     return async( dispatch ) => {
         try {         
-            const { data } = await axios.get('https://e-commerce-api-v2.academlo.tech/api/v1/categories')
+            const { data } = await axios.get(`${import.meta.env.VITE_BASE_URL}/categories`)
             dispatch( setCategories(data) )
         } catch (error) {
             console.log(error)

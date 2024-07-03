@@ -7,7 +7,7 @@ import { setCart } from '../slices'
 export const getPurchases = () => {
 
     return async ( dispatch ) => {
-        const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases'
+        const url = `${import.meta.env.VITE_BASE_URL}/purchases`
         try {
             dispatch(setIsPurchasesLoading(true))
             const { data } = await axios.get(url, { headers: getHeaders() })
@@ -22,7 +22,7 @@ export const getPurchases = () => {
 
 export const postPurchases = () => {
     return async( dispatch )=> {
-        const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases'
+        const url = `${import.meta.env.VITE_BASE_URL}/purchases`
         try {
             await axios.post(url, {}, { headers: getHeaders() })
             dispatch( setCart([]) )
